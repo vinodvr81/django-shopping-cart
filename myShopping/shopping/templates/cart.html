@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Cart - Shopping List{% endblock %}
+
+{% block content %}
+    <h2>Shopping Cart</h2>
+
+    <!-- Display Existing Carts -->
+    <h3>Existing Carts</h3>
+    <ul>
+        {% for cart in carts %}
+            <li>
+                <strong>Cart ID:</strong> {{ cart.id }} <br>
+                <strong>Shopping List:</strong> {{ cart.shopping_list }} <br>
+                <strong>Purchased Date:</strong> {{ cart.purchased_date }}
+            </li>
+        {% empty %}
+            <li>No carts found.</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Form to Create a New Cart -->
+    <h3>Add New Cart</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="shopping_list">Shopping List (JSON format):</label><br>
+        <textarea id="shopping_list" name="shopping_list" rows="4" cols="50">
+{"items": [{"name": "apple", "quantity": 2}, {"name": "bread", "quantity": 1}]}
+        </textarea><br><br>
+        <button type="submit">Add Cart</button>
+    </form>
+{% endblock %}

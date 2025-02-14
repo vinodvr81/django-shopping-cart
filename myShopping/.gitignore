@@ -1,0 +1,39 @@
+# Byte-compiled / compiled Python files
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/
+env/
+
+# Database files
+*.sqlite3
+*.db
+
+# Django migrations (optional, if you want to ignore them)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Media and static files
+media/
+staticfiles/
+
+# Logs and temp files
+*.log
+*.out
+*.pid
+*.swp
+*.swo
+*.swn
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables (for security)
+.env
